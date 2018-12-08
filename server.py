@@ -104,6 +104,7 @@ class Serv:
         if user == None:
             return
 
+        user.closeLobby()
         self.users.remove(user)
         try:
             user.conn.close()

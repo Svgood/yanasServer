@@ -10,7 +10,13 @@ class User:
 
         #for game
         self.score = 0
+        self.lobby = None
 
     def sendMsg(self, msg):
         self.conn.send(util.sb(msg))
+
+    def closeLobby(self):
+        if self.lobby is None: return
+
+        self.lobby.endGame()
 
